@@ -1,8 +1,7 @@
-<<<<<<< HEAD
-## Feature List 
-[ ] Add Tomcat as a server
-[ ] Init Website 
-[ ] -----
-=======
+# IWP
+### URLs
+- index: 
 
->>>>>>> feature/readme
+### Features
+- [ ] Setup Tomcat as a server
+- [ ] Add Static Website
