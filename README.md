@@ -7,3 +7,4 @@
 - [ ] Add Static Website
 - [ ] Add form for user Input
 - [ ] Add Backend with a Storage
+- [ ] Use Typescript and React for the frontend
