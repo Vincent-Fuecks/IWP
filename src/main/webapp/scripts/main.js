@@ -1,9 +1,20 @@
-// Warte, bis der DOM geladen ist, und logge dann eine Nachricht in der Konsole.
-document.addEventListener('DOMContentLoaded', function () {
-    console.log("Hello from TypeScript!");
-    // Optional: Manipuliere das DOM, beispielsweise:
-    var heading = document.querySelector('h1');
-    if (heading) {
-        heading.textContent += " - Served via Tomcat with Java & TypeScript";
-    }
+document.addEventListener('DOMContentLoaded', () => {
+    const loadBtn = document.getElementById('loadBtn');
+    const contentDiv = document.getElementById('content');
+
+    loadBtn.addEventListener('click', () => {
+        fetch('hello')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Netzwerkantwort war nicht ok');
+                }
+                return response.text();
+            })
+            .then(data => {
+                contentDiv.innerHTML = data;
+            })
+            .catch(error => {
+                contentDiv.innerHTML = 'Fehler beim Laden der Nachricht: ' + error;
+            });
+    });
 });
